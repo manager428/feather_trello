@@ -1,0 +1,46 @@
+In order to succeed, you MUST do the following: 
+● Use the provided boilerplate project as a starting point; it already points to the versions of dependencies we use and the folder structure we use. 
+● Use modern ES6 syntax. 
+
+Yes, I used it
+
+● Use async/await in favor of promise chaining. 
+
+yeah, I used it
+I implemented it in CRUD
+
+Example: 
+async dropCard() {
+      if (this.droppingList && this.draggingCard.listId !== this.droppingList._id) {
+        this.lists.find((list) => list._id === this.draggingCard.listId);
+        this.draggingCard.listId = this.droppingList._id;
+        await this.draggingCard.save();
+      }
+
+● Use the new data modeling methods from FeathersVuex (https://vuex.feathersjs.com/model-classes.html)
+
+Yeah, I used, you can check frontend code, Get, Delete, Update, Add
+
+example: 
+async updateBoard(updateId) {
+      const { Board } = this.$FeathersVuex.api;
+      const board = new Board({ _id: updateId });
+      await board.update();
+
+● Handle incorrect routes/paths
+
+I didn't implemented it 
+
+● Handle all CRUD errors 
+
+If code has error, site will get error code
+example : 
+.then((res) => {
+          console.log('removed   res ', res);
+        }).catch((e) => {
+          console.log('remoive error ', e);
+        }); ...
+
+● The video provided doesn’t use these things; do not do the same coding style that is demonstrated (the syntax won’t even work anymore); the goal here is to be inspired by it but it can’t be used for coding reference/styling, we expect you to read the documentation and code it the “modern way” instead.
+
+I didn't implemented but If you give me some time, I will complete it
